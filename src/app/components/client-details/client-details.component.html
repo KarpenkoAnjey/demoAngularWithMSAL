@@ -1,0 +1,45 @@
+<div>
+  <div><span>ClientName:</span><span>{{ client?.personalInfo?.fname }} {{ client?.personalInfo?.lname }}</span></div>
+  <div><span>ClientEmail:</span><span>{{ client?.clientEmail }}</span></div>
+  <div><span>ClientCreated:</span><span>{{ client?.clientCreated }}</span></div>
+
+  <hr>
+  <div>
+    <h3>Validators: </h3>
+    <div>
+      <h4>base (HTML5) </h4>
+      <input
+        [(ngModel)]="bill"
+        #name="ngModel"
+        max="100"
+        required
+        type="number"
+      />
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        somthing wrong
+      </div>
+    </div>
+
+    <hr>
+    <div>
+      <h4>FormControl </h4>
+      <div>
+        <input [formControl]="testFormControl" >
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div>
+    <h4>FormGroup </h4>
+    <div>
+      <fieldset [formGroup]="fullNameControls">
+        <input formControlName ="testFirstNameFormControl" >
+        <input formControlName ="testLastFormControl" >
+
+      </fieldset>
+    </div>
+</div>
+</div>
+

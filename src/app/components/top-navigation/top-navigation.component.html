@@ -1,0 +1,29 @@
+<div class="grid grid-rows-1 grid-flow-col gap-4 w-full">
+<div class="col-span-1">
+  <table>
+    <tr>
+      <td><button
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        *ngIf="!(isLoggedIn() | async)" (click)="login()">login</button>
+        <div *ngIf="!(isLoggedIn() | async)"><h3>You need logged in!</h3></div>
+      </td>
+      <td>
+        <button
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        *ngIf="(isLoggedIn() | async)" (click)="logout()">logout</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="col-span-2 self-center">
+<a
+  class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+  href="/">Home</a>
+</div>
+  <div class="col-span-3 self-center">
+      <span>{{ attorney?.attorney?.fname  }} {{ attorney?.attorney?.lname  }}</span>
+  </div>
+</div>
+
+
+
